@@ -1,30 +1,26 @@
 <?php
-// Secure database connection
-$servername = "localhost";
-$username = "root"; // Replace with your DB username
-$password = ""; // Replace with your DB password
-$dbname = "testdb"; // Replace with your database name
+// Secure PHP code
 
-// Create connection using MySQLi
-$conn = new mysqli($servername, $username, $password, $dbname);
+// Connect to database
+$conn = new mysqli("localhost", "root", "", "cybersecurity-project");
 
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Function to validate input
+// Function to validate and sanitize input
 function validate_input($data) {
     return htmlspecialchars(trim($data), ENT_QUOTES, 'UTF-8');
 }
 
-// Get and validate input from form
+// Get and validate input from the form
 $user = isset($_GET['username']) ? validate_input($_GET['username']) : null;
 $pass = isset($_GET['password']) ? validate_input($_GET['password']) : null;
 
 if ($user && $pass) {
     // Use prepared statements to prevent SQL injection
-    $stmt = $conn->prepare("SELECT * FROM users WHERE username = ? AND password = ?");
+    $stmt = $conn->prepare("SELECT * FROM users WHERE name = ? AND pass = ?");
     $stmt->bind_param("ss", $user, $pass);
     $stmt->execute();
 
@@ -36,7 +32,7 @@ if ($user && $pass) {
 
         // Fetch and display user data (if needed)
         while ($row = $result->fetch_assoc()) {
-            echo "ID: " . $row["id"] . " - Username: " . $row["username"] . "<br>";
+            echo "ID: " . $row["id"] . " - Name: " . $row["name"] . "<br>";
         }
     } else {
         echo "Invalid credentials.";

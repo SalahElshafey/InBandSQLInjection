@@ -82,13 +82,14 @@ footer {
     <h1>HACK ME</h1>
     <img src="https://th.bing.com/th/id/R.36ef5bd327cc8431a3eed57f229c36ad?rik=ZJZBWsdTqWflJw&riu=http%3a%2f%2fi61.servimg.com%2fu%2ff61%2f13%2f81%2f03%2f46%2fi_logo10.gif&ehk=nWJ8ljjFIWVxvzE%2f5wd2zBWXxrD9mLk8wH39r1%2bfvtE%3d&risl=&pid=ImgRaw&r=0" alt="Hack Warning">
     
-    <form method="GET" action="vulnerable.php">
-        <label for="username">Enter Username:</label>
-        <input type="text" id="username" name="username">
-        <label for="password">Enter Password:</label>
-        <input type="text" id="password" name="password">
-        <button type="submit">SUBMIT</button>
+    <form method="POST" action="signup.php">
+        <label for="username">Choose a Username:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Choose a Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Sign Up</button>
     </form>
+    
     
     <footer>
         Made by: Mazen El Sedfy, Mohamed Sherif, Salah El Shafaey
