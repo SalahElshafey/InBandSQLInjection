@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="HOME.css">
+    <title>Hack Me</title>
+</head>
+<style>
+    body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: 'VT323', monospace;
+    background-color: #000;
+    color: rgb(255, 0, 0);
+}
+h4 {
+    text-align: center;
+    color: #fc0303;
+}
+a {
+    text-align: center;
+    color: #fc0303;
+}
+
+h1 {
+    font-size: 60px;
+    text-shadow: 0 0 10px #0f0;
+    margin-top: 20px;
+}
+
+img {
+    max-width: 90%;
+    height: auto;
+    margin: 20px 0;
+    border: 5px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+form {
+    background-color: #fc0303;
+    padding: 20px;
+    margin: 20px auto;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #070101;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 15px;
+    align-self: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #000d01;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0cfd60;
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #888;
+}
+
+</style>
+<body>
+    <h1>HACK ME</h1>
+    <img src="https://th.bing.com/th/id/R.36ef5bd327cc8431a3eed57f229c36ad?rik=ZJZBWsdTqWflJw&riu=http%3a%2f%2fi61.servimg.com%2fu%2ff61%2f13%2f81%2f03%2f46%2fi_logo10.gif&ehk=nWJ8ljjFIWVxvzE%2f5wd2zBWXxrD9mLk8wH39r1%2bfvtE%3d&risl=&pid=ImgRaw&r=0" alt="Hack Warning">
+    
+    <form method="GET" action="vulnerable.php">
+        <label for="username">Enter Username:</label>
+        <input type="text" id="username" name="username">
+        <label for="password">Enter Password:</label>
+        <input type="text" id="password" name="password">
+        <button type="submit">Login</button>
+    </form>
+    <h4>
+        if you don't have an account press here <br>
+        <a href="signup.html"> signup </a>
+    </h4>
+    
+    <footer>
+        Made by: Mazen El Sedfy, Mohamed Sherif, Salah El Shafaey
+    </footer>
+</body>
+</html>
